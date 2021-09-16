@@ -1,1 +1,5 @@
-# KichyMC.github.io
+# Rikiya’s HomePage
+
+私のホームページです
+現在製作途中です
+ポートフォリオのような形式を予定しております。

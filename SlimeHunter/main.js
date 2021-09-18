@@ -8,7 +8,7 @@ var kuro; //黒騎士
 var flower;    //フラワー
 var stone;    //石
 var slime;    //スライム
-var mimikku;  //ミミック
+var mimikku;　　//ミミック
 var catsle;    //城
 var qween;    //女王
 var lastboss; //ラスボス
@@ -49,7 +49,7 @@ function createKnight() {
 
 function knight_enterfame() {
   //騎士の毎フレーム処理
-  //左に移動
+　//左に移動
     if ((input.left === true) && (col_flag != 1)) {
         if (this.x >= 0) {
             this.x -= 4;
@@ -142,7 +142,7 @@ function takara_enterframe(){
 }
 
 function createKuro(){
-  //黒騎士の初期化処理
+　//黒騎士の初期化処理
   kuro = new Sprite(32,32);
   kuro.image = game.assets["chara7.png"];
   kuro.frame = [0,0,0,1,1,1,2,2,2];
@@ -154,7 +154,7 @@ function createKuro(){
 
 function kuro_enterframe(){
   //黒騎士の毎フレーム処理
-  //移動
+　//移動
   this.y++;
   //衝突判定
   if (this.within(knight)) {
@@ -328,12 +328,12 @@ function xxx_enterframe() {
 */
 
 function rand(n) {
-  //乱数の生成
+　//乱数の生成
   return Math.floor(Math.random() * n);
 }
 
 function createSea(x,y){
- //海の初期化処理
+　 //海の初期化処理
   sea = new Sprite(16,16);
   sea.image = game.assets["map0.png"];
   sea.frame = 1;
@@ -345,7 +345,7 @@ function createSea(x,y){
 
 function sea_enterframe(){
   //海の毎フレーム処理
-  //移動
+　//移動
   this.y++;
   //ゲームオーバー判定
   if ((sea_flag==0) && (this.y >=210) && (end_flag==0)) {
@@ -358,7 +358,7 @@ function sea_enterframe(){
 }
 
 function createGyokuza(){
- //玉座の初期化処理
+　 //玉座の初期化処理
   gyokuza = new Sprite(320,196);
   gyokuza.image = game.assets["goal.png"];
   gyokuza.x = 0;
@@ -369,7 +369,7 @@ function createGyokuza(){
 
 function gyokuza_enterframe(){
   //玉座の毎フレーム処理
-  //移動
+　//移動
   if(this.y < 50){
   this.y++;
   }
@@ -390,8 +390,8 @@ function createCatsle(){
 }
 
 function catsle_enterframe(){
-  //城の毎フレーム処理
-  //移動
+　//城の毎フレーム処理
+　//移動
   this.y++;
   //衝突判定
   if (this.within(knight)) {
@@ -404,7 +404,7 @@ function catsle_enterframe(){
         sound_clear.play();//音楽再生
       } else {
         if(scoreLabel.score >= 3000){
-          //ゲームクリア
+　　　　  //ゲームクリア
           end_flag = 1;
           ending_scene();
           sound_bgm.stop();//音楽停止
@@ -434,8 +434,8 @@ function createQween(){
 }
 
 function qween_enterframe(){
-  //女王の毎フレーム処理
-  //移動
+　//女王の毎フレーム処理
+　//移動
   if(this.y < 110){
   this.y++;
   }
@@ -450,7 +450,7 @@ function qween_enterframe(){
         sound_clear.play();//音楽再生
       } else {
         if(scoreLabel.score >= 2500){
-          //ゲームクリア
+　　　　  //ゲームクリア
           end_flag = 1;
           ending_scene();
           sound_bgm.stop();//音楽停止
@@ -481,8 +481,8 @@ function createLastboss(){
 }
 
 function lastboss_enterframe(){
-  //ラスボスの毎フレーム処理
-  //移動
+　//ラスボスの毎フレーム処理
+　//移動
   if(this.y < 110){
     this.y++;
   }
@@ -504,7 +504,7 @@ function lastboss_enterframe(){
         sound_clear.play();//音楽再生
       } else {
         if(scoreLabel.score >= 3000){
-          //ゲームクリア
+　　　　  //ゲームクリア
           end_flag = 1;
           ending_scene();
           sound_last.stop();//音楽停止
@@ -704,7 +704,7 @@ function ending_scene(){
       re_on_2 = 1;
     }
      //ゲームオーバー画面表示後の画面クリック待ち
-      re_2.addEventListener(Event.TOUCH_START, function(){
+　    re_2.addEventListener(Event.TOUCH_START, function(){
       game.rootScene.removeChild(result_2);
       game.rootScene.removeChild(re_2);
       if(game_level == 1){
@@ -738,7 +738,7 @@ function ending_scene(){
       re_on_4 = 1;
     }
      //コンプリート画面表示後の画面クリック待ち
-      re_4.addEventListener(Event.TOUCH_START, function(){
+　    re_4.addEventListener(Event.TOUCH_START, function(){
       game.rootScene.removeChild(result_4);
       game.rootScene.removeChild(re_4);
       if(game_level == 1){
@@ -843,16 +843,16 @@ var createGameScene = function() {
     //キャラ生成
    for (var i = 0; i < 30; i++) {
        createSlime();
-   }
+   }　
    for (var i = 0; i < (game_level * 10); i++) {
      createFlower();
-   }
+   }　
    for (var i = 0; i < 3; i++) {
      createEnemy();
-   }
+   }　
    for (var i = 0; i < 3; i++) {
      createKuro();
-   }
+   }　
    createCatsle();
    createKnight();
   }
@@ -868,16 +868,16 @@ var createGameScene = function() {
      //キャラ生成
    for (var i = 0; i < 30; i++) {
        createMimikku();
-   }
+   }　
    for (var i = 0; i < (game_level * 10); i++) {
      createHuman();
-   }
+   }　
    for (var i = 0; i < 3; i++) {
      createTakara();
-   }
+   }　
    for (var i = 0; i < 3; i++) {
      createKuro();
-   }
+   }　
    createGyokuza();
    createQween();
    createKnight();
@@ -894,16 +894,16 @@ var createGameScene = function() {
       //キャラ生成
    for (var i = 0; i < 30; i++) {
        createMimikku();
-   }
+   }　
    for (var i = 0; i < (game_level * 10); i++) {
      createStone();
-   }
+   }　
    for (var i = 0; i < 3; i++) {
      createTakara();
-   }
+   }　
    for (var i = 0; i < 3; i++) {
      createKuro();
-   }
+   }　
     createLastboss();
     createKnight();
     //createXXX(); HARDの敵
@@ -928,10 +928,10 @@ window.onload = function() {
     game_level = 0;
 
     game.onload = function() {
-      //最初のタイトル画面
+　　　//最初のタイトル画面
       game.replaceScene(createTitleScene());
 
-      //ゲームのリトライ
+　　　//ゲームのリトライ
       game.rootScene.onenterframe = function() {
         if (end_flag==3) {
            location.reload();
